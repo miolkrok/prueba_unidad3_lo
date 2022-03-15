@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import javax.transaction.Transactional;
+import javax.transaction.Transactional.TxType;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,6 +63,7 @@ public class CajaSantaMariaServiceImpl implements ICajaSantaMariaService {
 	}
 
 	@Override
+	@Transactional(value = TxType.NOT_SUPPORTED)
 	public Venta reporteVentas(LocalDateTime fecha, String categoria, Integer cantidad) {
 		// TODO Auto-generated method stub
 		return null;
