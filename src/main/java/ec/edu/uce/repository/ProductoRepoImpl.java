@@ -2,6 +2,7 @@ package ec.edu.uce.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
@@ -41,6 +42,17 @@ public class ProductoRepoImpl implements IProductoRepo{
 		// TODO Auto-generated method stub
 		Producto clienteABorrar = this.buscar(id);
 		this.entityManager.remove(clienteABorrar);
+	}
+
+	@Override
+	public Producto buscarProductoCB(String codigoBarras) {
+		// TODO Auto-generated method stub
+		TypedQuery<Producto> myQuery = 
+				this.entityManager
+				.createQuery("SELECT c FROM Producto c WHERE c.codigoBarras=:valor",Producto.class);
+		myQuery.setParameter("valor", codigoBarras);
+		
+		return myQuery.getSingleResult();
 	}
 
 }

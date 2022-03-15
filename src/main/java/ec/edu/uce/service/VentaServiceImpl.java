@@ -14,30 +14,30 @@ public class VentaServiceImpl  implements IVentaService{
 	private static Logger LOG = Logger.getLogger(VentaServiceImpl.class);
 	
 	@Autowired
-	private IVentaRepo modeloUnoRepo;
+	private IVentaRepo ventaRepo;
 
 	@Override
 	public void insertar(Venta venta) {
 		// TODO Auto-generated method stub
-		this.modeloUnoRepo.insertar(venta);
+		this.ventaRepo.insertar(venta);
 	}
 
 	@Override
 	public void actualizar(Venta venta) {
 		// TODO Auto-generated method stub
-		this.modeloUnoRepo.actualizar(venta);
+		this.ventaRepo.actualizar(venta);
 	}
 
 	@Override
 	public Venta buscar(Integer id) {
 		// TODO Auto-generated method stub
-		return this.modeloUnoRepo.buscar(id);
+		return this.ventaRepo.buscar(id);
 	}
 
 	@Override
 	public void borrar(Integer id) {
 		// TODO Auto-generated method stub
-		this.modeloUnoRepo.borrar(id);
+		this.ventaRepo.borrar(id);
 	}
 
 }

@@ -22,11 +22,11 @@ public class DetalleVenta {
 	@Id
 	@Column(name = "deve_id")
 	private Integer id;
-	@Column(name = "deve_id")
+	@Column(name = "deve_cantidad")
 	private Integer Cantidad;
-	@Column(name = "deve_id")
+	@Column(name = "deve_precio_unitario")
 	private BigDecimal precioUnitario;
-	@Column(name = "deve_id")
+	@Column(name = "deve_subtotal")
 	private BigDecimal subatotal;
 	@ManyToOne
 	@JoinColumn(name="vent_id")

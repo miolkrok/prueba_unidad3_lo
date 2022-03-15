@@ -14,30 +14,36 @@ public class ProductoServiceImpl implements IProductoService{
 	private static Logger LOG = Logger.getLogger(ProductoServiceImpl.class);
 
 	@Autowired
-	private IProductoRepo modeloDosRepo;
+	private IProductoRepo productoRepo;
 	
 	@Override
 	public void insertar(Producto producto) {
 		// TODO Auto-generated method stub
-		this.modeloDosRepo.insertar(producto);
+		this.productoRepo.insertar(producto);
 	}
 
 	@Override
 	public void actualizar(Producto producto) {
 		// TODO Auto-generated method stub
-		this.modeloDosRepo.actualizar(producto);
+		this.productoRepo.actualizar(producto);
 	}
 
 	@Override
 	public Producto buscar(Integer id) {
 		// TODO Auto-generated method stub
-		return this.modeloDosRepo.buscar(id);
+		return this.productoRepo.buscar(id);
 	}
 
 	@Override
 	public void borrar(Integer id) {
 		// TODO Auto-generated method stub
-		this.modeloDosRepo.borrar(id);
+		this.productoRepo.borrar(id);
+	}
+
+	@Override
+	public Producto buscarProductoCB(String codigoBarras) {
+		// TODO Auto-generated method stub
+		return this.productoRepo.buscarProductoCB(codigoBarras);
 	}
 
 }
